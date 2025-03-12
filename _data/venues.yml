@@ -1,10 +1,14 @@
-"USENIX SEC 2023":
+"Security 2023":
   url: "https://www.usenix.org/conference/usenixsecurity23"
   color: "#8f1d05"
 
 "CCS 2024":
   url: "https://www.sigsac.org/ccs/CCS2024"
   color: "#24198b"
+
+"S&P 2025":
+  url: "https://sp2025.ieee-security.org"
+  color: "#363104"
 
 "PhysRev":
   url: https://journals.aps.org/

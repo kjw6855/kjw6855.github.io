@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our research article on [security challenges in Intent-Based Networking](https://cacm.acm.org/research/security-challenges-of-intent-based-networking/) posted in Communications of the ACM! :star:
+Our research article on [security challenges in Intent-Based Networking](https://cacm.acm.org/research/security-challenges-of-intent-based-networking/) posted in Communications of the ACM! :fire:
