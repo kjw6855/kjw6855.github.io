@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper on fuzzing P4 network infrastructure accepted at IEEE S&P 2025! :sparkles:
+Our paper on [fuzzing P4 network infrastructure](assets/pdf/sp25_kim_chimera.pdf) accepted at IEEE S&P 2025! :sparkles:
