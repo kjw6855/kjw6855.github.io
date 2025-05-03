@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I will work as a SWE intern in WAN control and management team at Meta for Summer 2025 :star:
+I will work as a SWE intern in Network Planning Foundations team at Meta for Summer 2025 :star:
