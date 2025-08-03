@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper on [fuzzing Intent-Based Networking](https://www.usenix.org/conference/usenixsecurity23/presentation/kim-jiwon) presented at USENIX Security 2023! :fire:
+Our paper on [fuzzing Intent-Based Networking](https://www.usenix.org/conference/usenixsecurity23/presentation/kim-jiwon) [presented](https://x.com/PurSecLab/status/1689762969478221827) at USENIX Security 2023! :fire:
