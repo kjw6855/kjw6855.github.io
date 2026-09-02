@@ -1295,3 +1295,32 @@ ninja-keys::part(ninja-input-wrapper) {
   background-color: var(--global-theme-color);
   color: var(--global-text-color);
 }
+
+// Banner box
+:root {
+  --global-banner-bg-color: #{rgba($boilermaker-gold-color, 0.3)};
+}
+
+html[data-theme="dark"] {
+  --global-banner-bg-color: #{rgba($boilermaker-gold-color, 0.1)};
+}
+
+.banner-box {
+  background-color: var(--global-banner-bg-color);
+  color: var(--global-text-color);
+  border-left: 4px solid var(--global-theme-color);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0.25rem;
+  box-shadow:
+    0 2px 5px 0 rgba(0, 0, 0, 0.16),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+  p {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: var(--global-theme-color);
+  }
+}

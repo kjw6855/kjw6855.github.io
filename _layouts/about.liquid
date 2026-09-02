@@ -36,6 +36,12 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
+    <!-- Banner -->
+    {% assign banner_page = site.pages | where: 'path', '_pages/banner.md' | first %}
+    {% if banner_page.content != blank %}
+      <div class="banner-box">{{ banner_page.content | markdownify }}</div>
+    {% endif %}
+
     <!-- News -->
     {% if page.news and site.announcements.enabled %}
       <h2>
