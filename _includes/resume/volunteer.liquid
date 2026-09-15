@@ -1,24 +1,35 @@
 <ul class="card-text font-weight-light list-group list-group-flush">
-  {% assign volunteer = data[1] | sort: 'startDate' | reverse %}
-  {% for content in volunteer %}
+  {% for content in data[1] %}
+    {% if content.startDate %}
+      {% assign startDate = content.startDate | split: '-' | slice: 0, 2 | join: '.' %}
+      {% assign endDate = content.endDate | split: '-' | slice: 0, 2 | join: '.' | default: 'Present' %}
+      {% assign date = startDate | append: ' - ' %}
+      {% assign date = date | append: endDate %}
+    {% else %}
+      {% assign date = '' %}
+    {% endif %}
+    {% if date != '' or content.location %}
+      {% assign has_side = true %}
+      {% assign body_class = 'col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0' %}
+      {% assign indent = 'ml-1 ml-md-4' %}
+    {% else %}
+      {% assign has_side = false %}
+      {% assign body_class = 'col-12' %}
+      {% assign indent = '' %}
+    {% endif %}
     <li class="list-group-item">
       <div class="row">
+        {% if has_side %}
         <div class="col-xs-2 cl-sm-2 col-md-2 text-center date-column">
-          {% if content.startDate %}
-            {% assign startDate = content.startDate | split: '-' | slice: 0, 2 | join: '.' %}
-            {% assign endDate = content.endDate | split: '-' | slice: 0, 2 | join: '.' | default: 'Present' %}
-            {% assign date = startDate | append: ' - ' %}
-            {% assign date = date | append: endDate %}
-          {% else %}
-            {% assign date = '' %}
-          {% endif %}
           <table class="table-cv">
             <tbody>
-              <tr>
-                <td>
-                  <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px"> {{ date }} </span>
-                </td>
-              </tr>
+              {% if date != '' %}
+                <tr>
+                  <td>
+                    <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px"> {{ date }} </span>
+                  </td>
+                </tr>
+              {% endif %}
               {% if content.location %}
                 <tr>
                   <td>
@@ -32,17 +43,36 @@
             </tbody>
           </table>
         </div>
-        <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
-          <h6 class="title font-weight-bold ml-1 ml-md-4">
+        {% endif %}
+        <div class="{{ body_class }}">
+          <h6 class="title font-weight-bold {{ indent }}">
             <a href="{{ content.url }}">{{ content.position }}</a>
           </h6>
-          <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">{{ content.organization }}</h6>
-          <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem; font-style: italic">{{ content.summary }}</h6>
-          <ul class="items">
+          {% if content.organization %}
+            <h6 class="{{ indent }}" style="font-size: 0.95rem">{{ content.organization }}</h6>
+          {% endif %}
+          {% if content.summary %}
+            <h6 class="{{ indent }}" style="font-size: 0.95rem; font-style: italic">{{ content.summary }}</h6>
+          {% endif %}
+          <ul class="items service-items">
             {% for item in content.highlights %}
-              <li>
-                <span class="item">{{ item }}</span>
-              </li>
+              {% if item.name %}
+                <li class="service-item">
+                  <span class="service-years">
+                    {%- for year in item.years -%}
+                      <span class="badge font-weight-bold align-middle">{{ year }}</span>
+                    {%- endfor -%}
+                  </span>
+                  <span class="item">
+                    {{- item.name -}}
+                    {%- if item.role %} ({{ item.role }}){% endif -%}
+                  </span>
+                </li>
+              {% else %}
+                <li>
+                  <span class="item">{{ item }}</span>
+                </li>
+              {% endif %}
             {% endfor %}
           </ul>
         </div>

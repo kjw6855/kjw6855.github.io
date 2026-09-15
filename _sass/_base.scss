@@ -490,6 +490,30 @@ footer.sticky-bottom {
   transform: translateX(-15px) translateY(-5px);
 }
 
+// CV volunteer: year badges before each service
+.service-items {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+
+  .service-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .service-years {
+    display: inline-flex;
+    flex-shrink: 0;
+    gap: 0.25rem;
+
+    .badge {
+      min-width: 3rem;
+    }
+  }
+}
+
 // Repositories
 
 @media (min-width: 768px) {
