@@ -6,7 +6,7 @@ subtitle: <a href='#'>Ph.D. Candidate</a> in Computer Science at Purdue Universi
 
 profile:
   align: right
-  image: jiwonkim-square.jpg
+  image: jiwonkim-talk-eliptical.jpg
   image_circular: true # crops the image to make it circular
   more_info: >
     <p><i class="fa-regular fa-envelope"></i> kim1685@purdue.edu</p>
