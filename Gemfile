@@ -24,6 +24,8 @@ group :jekyll_plugins do
 end
 group :other_plugins do
     gem 'css_parser'
+    # removed from Ruby's default gems in 4.0; required by jekyll-twitter-plugin
+    gem 'ostruct'
     gem 'feedjira'
     gem 'httparty'
 end
